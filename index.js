@@ -22,9 +22,7 @@ module.exports = function (opts) {
       org: opts.org,
       repo: repo.name
     })
-  }).then(function (response) {
-    return _.flatten(response)
-  }).map(function (response) {
+  }, {concurrency: 10}).then(_.flatten.bind(_)).map(function (response) {
     var repo = response.commit.url.match('/ipfs/([a-z-]*)/commits/')[1]
     var since = opts.since
     return octo.repos(opts.org, repo).commits.fetch({
@@ -46,9 +44,7 @@ module.exports = function (opts) {
     //     sha: response.commit.sha,
     //     since: '2016-01-11T00:01:01Z'
     //   })
-  }, {concurrency: 10}).then(function (response) {
-    return _.flatten(response)
-  }).map(function (commit) {
+  }, {concurrency: 10}).then(_.flatten.bind(_)).map(function (commit) {
     var arr = []
     if (commit.author && commit.author.login) {
       arr.push(commit.author.login)
