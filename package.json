@@ -1,6 +1,6 @@
 {
   "name": "get-committers",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Get users who have committed code to an organizations' GitHub repos",
   "license": "MIT",
   "repository": "RichardLitt/get-committers",
