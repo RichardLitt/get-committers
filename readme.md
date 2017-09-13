@@ -1,5 +1,7 @@
 # get-committers [![Build Status](https://travis-ci.org/RichardLitt/get-committers.svg?branch=master)](https://travis-ci.org/RichardLitt/get-committers)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/RichardLitt/get-committers.svg)](https://greenkeeper.io/)
+
 > Get users who have committed code to an organizations' GitHub repos
 
 This module returns a list of GitHub usernames who have committed code to an organization's repos within a set timeframe.
